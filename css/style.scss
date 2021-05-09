@@ -23,8 +23,10 @@ $azul-escuro: #4E54C8;
 
   @if($tamanho == 18){
     font-size: 18px;
+    text-transform: uppercase;
   } @else if ($tamanho == 16){
     font-size: 16px;
+    text-transform: uppercase;
   } @else if ($tamanho == 14) {
     font-size: 14px;
   } @else if ($tamanho == 13) {
@@ -32,6 +34,61 @@ $azul-escuro: #4E54C8;
   }
 }
 
-h1 {
-  @include nunito(45)
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background;
+}
+
+nav{
+  text-align: center;
+  padding: 30px;
+
+  img {
+    height: 70px;
+    width: 246px;
+  }
+
+  li{
+    display: inline;
+    justify-content: space-between;
+    padding: 0 20px;
+    @include montserrat(16);
+    
+    a {
+      color: $texto;
+      text-decoration: none;
+    }
+  }
+
+}
+
+main{
+  section.page-initial {
+    text-align: center;
+    background-image: url(../assets/arte_homepage.svg );
+    width: 411px;
+    height: 460px;
+    h1 {
+      @include nunito(30);
+      color: $texto;
+    }
+      
+    a {
+      text-decoration: none;
+      padding: 5px;
+      border-radius: 10px;
+      background-color: $texto;
+      color: $background;
+      @include montserrat(18)
+    }
+      
+    img {
+       display: none;
+    }
+  }
 }

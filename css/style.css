@@ -1,7 +1,57 @@
-h1 {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #EDF6F9;
+}
+
+nav {
+  text-align: center;
+  padding: 30px;
+}
+nav img {
+  height: 70px;
+  width: 246px;
+}
+nav li {
+  display: inline;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-family: "montserrat", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+nav li a {
+  color: #165380;
+  text-decoration: none;
+}
+
+main section.page-initial {
+  text-align: center;
+  background-image: url(../assets/arte_homepage.svg);
+  width: 411px;
+  height: 460px;
+}
+main section.page-initial h1 {
   font-family: "nunito", sans-serif;
-  font-size: 45px;
-  font-weight: 900;
+  font-size: 30px;
+  color: #165380;
+}
+main section.page-initial a {
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #165380;
+  color: #EDF6F9;
+  font-family: "montserrat", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+main section.page-initial img {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
