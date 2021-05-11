@@ -1,0 +1,36 @@
+$background: #edf6f9;
+$texto: #165380;
+$azul-claro: #48bfe3;
+$azul-escuro: #4e54c8;
+
+@mixin nunito($tamanho) {
+  font-family: "nunito", sans-serif;
+
+  @if ($tamanho == 45) {
+    font-size: 45px;
+    font-weight: 800;
+  } @else if ($tamanho == 35) {
+    font-size: 35px;
+  } @else if ($tamanho == 30) {
+    font-size: 30px;
+    font-weight: 800;
+  } @else if ($tamanho == 20) {
+    font-size: 20px;
+  }
+}
+
+@mixin montserrat($tamanho) {
+  font-family: "montserrat", sans-serif;
+
+  @if ($tamanho == 18) {
+    font-size: 18px;
+    text-transform: uppercase;
+  } @else if ($tamanho == 16) {
+    font-size: 16px;
+    text-transform: uppercase;
+  } @else if ($tamanho == 14) {
+    font-size: 14px;
+  } @else if ($tamanho == 13) {
+    font-size: 13px;
+  }
+}

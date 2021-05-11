@@ -1,49 +1,21 @@
-$background: #edf6f9;
-$texto: #165380;
-$azul-claro: #48bfe3;
-$azul-escuro: #4e54c8;
-
-@mixin nunito($tamanho) {
-  font-family: "nunito", sans-serif;
-
-  @if ($tamanho == 45) {
-    font-size: 45px;
-    font-weight: 900;
-  } @else if ($tamanho == 35) {
-    font-size: 35px;
-  } @else if ($tamanho == 30) {
-    font-size: 30px;
-  } @else if ($tamanho == 20) {
-    font-size: 20px;
-  }
-}
-
-@mixin montserrat($tamanho) {
-  font-family: "montserrat", sans-serif;
-
-  @if ($tamanho == 18) {
-    font-size: 18px;
-    text-transform: uppercase;
-  } @else if ($tamanho == 16) {
-    font-size: 16px;
-    text-transform: uppercase;
-  } @else if ($tamanho == 14) {
-    font-size: 14px;
-  } @else if ($tamanho == 13) {
-    font-size: 13px;
-  }
-}
+@import 'variaveis';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: $background;
   display: grid;
-  grid-template-columns: 20px repeat(4, 1fr) 20px;
+  grid-template-columns: 1fr;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
 }
 
 img {
@@ -51,10 +23,11 @@ img {
 }
 
 header {
-  grid-column: 1 / 7;
+  grid-column: 2 / 3;
   display: flex;
   flex-direction: column;
   margin-top: 30px;
+  height: 20vh;
 
   img {
     margin: 0 auto;
@@ -62,51 +35,95 @@ header {
   }
 
   nav {
-    margin-top: 10px;
+    margin-top: 30px;
     text-align: center;
   
     li {
+      @include montserrat(16);
       display: inline;
       justify-content: space-between;
-      @include montserrat(16);
-      font-weight: 600;
     }
 
     a {
       color: $texto;
-      text-decoration: none;
-      padding: 0 10px;
+      padding: 0 15px;
     }
   }
 }
 
 main {
-  grid-column: 1 / 7;
+  grid-column: 2 / 3;
 
-  section.page-initial {
-    height: 400px;
+  .hero {
+    background: url(../assets/arte_homepage-mb.svg) no-repeat center center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80vh;
+    padding: 0 20px;
 
     h1 {
       @include nunito(30);
       text-align: center;
       color: $texto;
+      letter-spacing: 0.03em;
+      width: 280px;
+      margin: 2rem auto 0;
     }
 
     a {
-      text-decoration: none;
-      padding: 5px;
-      border-radius: 10px;
+      @include montserrat(18);
+      line-height: 40px;
+      width: 140px;
+      height: 40px;
+      border-radius: 15px;
       background-color: $texto;
       color: $background;
-      @include montserrat(18);
+      text-align: center;
+      margin: 0 auto 5rem;
     }
 
     img {
       display: none;
     }
   }
+
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: 20px repeat(4, 1fr) 20px;
+    margin-bottom: 100px;
+
+    h3 {
+      @include nunito(20);
+      text-transform: uppercase;
+      grid-column: 1 / 4;
+      display: inline-block;
+      background: $azul-claro;
+      color: $background;
+      border-radius: 0 50px 50px 0;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    article {
+      grid-column: 2 / 6;
+    }
+  }
+}
+
+.grid:nth-child(odd) {
+  h3 {
+    grid-column: 4 / 7;
+    background: $azul-escuro;
+    border-radius: 50px 0 0 50px ;
+  }
 }
 
 footer {
-  grid-column: 1 / 6;
+  grid-column: 2 / 3;
 }
