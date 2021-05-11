@@ -1,12 +1,12 @@
-$background: #EDF6F9;
+$background: #edf6f9;
 $texto: #165380;
-$azul-claro: #48BFE3;
-$azul-escuro: #4E54C8;
+$azul-claro: #48bfe3;
+$azul-escuro: #4e54c8;
 
 @mixin nunito($tamanho) {
-  font-family: 'nunito', sans-serif;
+  font-family: "nunito", sans-serif;
 
-  @if($tamanho == 45) {
+  @if ($tamanho == 45) {
     font-size: 45px;
     font-weight: 900;
   } @else if ($tamanho == 35) {
@@ -19,12 +19,12 @@ $azul-escuro: #4E54C8;
 }
 
 @mixin montserrat($tamanho) {
-  font-family: 'montserrat', sans-serif;
+  font-family: "montserrat", sans-serif;
 
-  @if($tamanho == 18){
+  @if ($tamanho == 18) {
     font-size: 18px;
     text-transform: uppercase;
-  } @else if ($tamanho == 16){
+  } @else if ($tamanho == 16) {
     font-size: 16px;
     text-transform: uppercase;
   } @else if ($tamanho == 14) {
@@ -42,53 +42,71 @@ $azul-escuro: #4E54C8;
 
 body {
   background-color: $background;
+  display: grid;
+  grid-template-columns: 20px repeat(4, 1fr) 20px;
 }
 
-nav{
-  text-align: center;
-  padding: 30px;
+img {
+  width: 100%;
+}
+
+header {
+  grid-column: 1 / 7;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
 
   img {
-    height: 70px;
-    width: 246px;
+    margin: 0 auto;
+    width: 250px;
   }
 
-  li{
-    display: inline;
-    justify-content: space-between;
-    padding: 0 20px;
-    @include montserrat(16);
-    
+  nav {
+    margin-top: 10px;
+    text-align: center;
+  
+    li {
+      display: inline;
+      justify-content: space-between;
+      @include montserrat(16);
+      font-weight: 600;
+    }
+
     a {
       color: $texto;
       text-decoration: none;
+      padding: 0 10px;
     }
   }
-
 }
 
-main{
+main {
+  grid-column: 1 / 7;
+
   section.page-initial {
-    text-align: center;
-    background-image: url(../assets/arte_homepage.svg );
-    width: 411px;
-    height: 460px;
+    height: 400px;
+
     h1 {
       @include nunito(30);
+      text-align: center;
       color: $texto;
     }
-      
+
     a {
       text-decoration: none;
       padding: 5px;
       border-radius: 10px;
       background-color: $texto;
       color: $background;
-      @include montserrat(18)
+      @include montserrat(18);
     }
-      
+
     img {
-       display: none;
+      display: none;
     }
   }
+}
+
+footer {
+  grid-column: 1 / 6;
 }
