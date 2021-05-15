@@ -107,6 +107,41 @@ main .grid h3 {
 main .grid article {
   grid-column: 2/6;
 }
+main .grid .ods {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 50px 0;
+}
+main .grid .ods p {
+  color: #165380;
+  font-family: "montserrat", sans-serif;
+  font-size: 14px;
+}
+main .grid .ods p a {
+  font-weight: bold;
+  color: #165380;
+}
+main .grid .ods img {
+  margin: 15px;
+  width: 110px;
+  height: 110px;
+}
+main .grid .jovens {
+  display: flex;
+  justify-content: center;
+  text-align: end;
+}
+main .grid .jovens p {
+  color: #165380;
+  font-family: "montserrat", sans-serif;
+  font-size: 14px;
+}
+main .grid .jovens img {
+  margin: 15px;
+  width: 110px;
+  height: 110px;
+}
 
 .grid:nth-child(odd) h3 {
   grid-column: 4/7;
